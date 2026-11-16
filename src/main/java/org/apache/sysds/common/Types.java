@@ -878,6 +878,7 @@ public interface Types {
 		COG,   // Cloud-optimized GeoTIFF
 		PARQUET, // parquet format for columnar data storage
 		DELTA, // Delta Lake table (transaction log + parquet), read/written via Delta Kernel
+		ZARR, // Zarr format
 		UNKNOWN;
 		
 		public boolean isIJV() {

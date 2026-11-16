@@ -43,7 +43,7 @@
 		<antlr.version>4.8</antlr.version>
 		<protobuf.version>3.23.4</protobuf.version>
 		<spark.version>3.5.7</spark.version>
-		<jackson.version>2.15.4</jackson.version>
+		<jackson.version>2.18.1</jackson.version>
 		<scala.version>2.12.18</scala.version>
 		<scala.binary.version>2.12</scala.binary.version>
 		<delta-kernel.version>3.3.2</delta-kernel.version>
@@ -1426,6 +1426,14 @@
 					<artifactId>jul-to-slf4j</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+
+		<!-- Source: https://mvnrepository.com/artifact/dev.zarr/zarr-java -->
+		<dependency>
+			<groupId>dev.zarr</groupId>
+			<artifactId>zarr-java</artifactId>
+			<version>0.6.0</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<!--dependency>

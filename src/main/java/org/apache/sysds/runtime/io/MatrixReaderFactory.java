@@ -83,6 +83,10 @@ public class MatrixReaderFactory {
 				reader = par ? new ReaderDeltaParallel() : new ReaderDelta();
 				break;
 
+			case ZARR:
+				reader = new ReaderZarr(new FileFormatPropertiesZarr());
+				break;
+
 			default:
 				throw new DMLRuntimeException("Failed to create matrix reader for unknown format: " + fmt.toString());
 		}
@@ -147,6 +151,12 @@ public class MatrixReaderFactory {
 
 			case DELTA:
 				reader = par ? new ReaderDeltaParallel() : new ReaderDelta();
+				break;
+
+			case ZARR:
+				FileFormatPropertiesZarr fileFormatPropertiesZarr = props.formatProperties != null ? (FileFormatPropertiesZarr) props.formatProperties : new FileFormatPropertiesZarr();
+
+				reader = new ReaderZarr(fileFormatPropertiesZarr);
 				break;
 
 			default:
