@@ -97,6 +97,9 @@ public class MatrixWriterFactory{
 			case DELTA:
 				return new WriterDelta();
 
+			case ZARR:
+				return new WriterZarr((FileFormatPropertiesZarr) props);
+
 			default:
 				throw new DMLRuntimeException("Failed to create matrix writer for unknown format: " + fmt.toString());
 		}
